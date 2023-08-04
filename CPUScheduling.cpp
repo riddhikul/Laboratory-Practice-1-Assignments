@@ -154,19 +154,31 @@ void Schedular::FCFS(){
     display();
 
     
+}
+
+void Schedular::SJF(){//premptive
+for (int i = 0; i < noOfJobs; i++) {
+               arr[i].input();
+           }
 
 }
 
-void Schedular::SJF(){
-
-
-}
-
-void Schedular::PriorityS(){
+void Schedular::PriorityS(){//non-preemptive
+for(int i=0; i<noOfJobs;i++){
+    arr[i].input();
 
 }
+cout<<"Enter priority of processes: ";
+for(int i=0;i<noOfJobs;i++){
+    cin>>arr[i].priority;
+}
 
-void Schedular::RR(){
+sortProcesses(compareByPriorityTime);
+calculateTimes();
+display();
+}
+
+void Schedular::RR(){//premptive
 
 }
 
