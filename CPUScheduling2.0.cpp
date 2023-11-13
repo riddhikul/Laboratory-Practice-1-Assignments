@@ -157,7 +157,7 @@ if(readyQueue.size()>0){
 this->display();
 }
 
-void srtf() {
+void srtf() {//premptive sjf
     int currentTime = 0;
     int remainingTime[n];
     fill(remainingTime, remainingTime + n, 0);
@@ -172,7 +172,8 @@ void srtf() {
 
         if (!readyQueue.empty()) {
             Job currentJob = readyQueue.front();
-            readyQueue.pop_back();
+            // readyQueue.pop_back();
+            readyQueue.erase(readyQueue.begin());
 
             currentJob.bursttime--;
 
